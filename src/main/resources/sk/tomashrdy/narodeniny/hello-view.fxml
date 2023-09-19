@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="sk.tomashrdy.narodeniny.HelloController">
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="18" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sk.tomashrdy.narodeniny.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -32,13 +32,13 @@
                <children>
                   <Label text="Dnešný dátum :" />
                   <Label text="Najbližšie narodeniny :" GridPane.rowIndex="1" />
-                  <Label text="?" GridPane.columnIndex="1" />
-                  <Label text="?" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="dnesLabel" text="?" GridPane.columnIndex="1" />
+                  <Label fx:id="najblizsiLabel" text="?" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <HBox spacing="10.0" VBox.vgrow="SOMETIMES">
                <children>
-                  <ListView HBox.hgrow="SOMETIMES" />
+                  <ListView fx:id="osobyListView" HBox.hgrow="SOMETIMES" />
                   <GridPane maxHeight="60.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -50,17 +50,17 @@
                     </rowConstraints>
                      <children>
                         <Label text="Narodeniny :" />
-                        <Label text="?" GridPane.columnIndex="1" />
+                        <Label fx:id="narodeninyLabel" text="?" GridPane.columnIndex="1" />
                         <Label text="Vek : " GridPane.rowIndex="1" />
-                        <Label text="?" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="vekLabel" text="?" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" prefWidth="70.0" text="Pridať" />
-                  <Button mnemonicParsing="false" prefWidth="70.0" text="Odobrať" />
+                  <Button mnemonicParsing="false" onAction="#handlePridatButtonAction" prefWidth="70.0" text="Pridať" />
+                  <Button mnemonicParsing="false" onAction="#handleOdobratButtonAction" prefWidth="70.0" text="Odobrať" />
                </children>
             </HBox>
          </children>
